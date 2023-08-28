@@ -1,3 +1,34 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "/"
+
+disableKinds = ["taxonomy", "term", "section"]
+
+[module]
+    [[module.imports]]
+        path = "github.com/bep/gallerydeluxe_starter"
+
+[params]
+    # Set to enable Plausible Analytics.
+    plausible_domain = ""
+
+    [params.gallerydeluxe]
+        shuffle     = false
+        reverse     = true
+        enable_exif = false
+
+[imaging]
+    resampleFilter = "CatmullRom"
+    quality        = 71
+    anchor         = "smart"
+    [imaging.exif]
+        disableDate    = false
+        disableLatLong = true
+        includeFields  = 'Artist|LensModel|FNumber|ExposureTime'# No options for now.
+[params]
+[params.gallerydeluxe]
+# Shuffle the images in the gallery to give the impression of a new gallery each time.
+shuffle = false
+  # Reverse the order of the images in the gallery.
+reverse = false
+  # Enable Exif data in the gallery.
+# See https://gohugo.io/content-management/image-processing/#exif-data for how to filter tags.
+enable_exif = false
